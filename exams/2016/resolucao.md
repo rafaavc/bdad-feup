@@ -58,6 +58,8 @@ FROM
 # Question 19
 
 ```sql
+DROP TRIGGER IF EXISTS StudentInsert;
+
 CREATE TRIGGER StudentInsert
 AFTER INSERT ON Estudante
 FOR EACH ROW

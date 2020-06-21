@@ -119,17 +119,23 @@ FROM Photo JOIN
 # Question 18
 
 ```sql
-
+DELETE FROM Photo
+WHERE julianday(uploadDate) < julianday(DATE("2010-01-01")) 
+    AND id in (SELECT photo
+                FROM AppearsIn
+                GROUP BY photo
+                HAVING count(user) < 2);
 ```
 
 # Question 19
 
 ```sql
+DROP TRIGGER IF EXISTS enforceLike;
 
-```
-
-# Question 20
-
-```sql
-
+CREATE TRIGGER enforceLike
+AFTER INSERT ON AppearsIn
+FOR EACH ROW
+BEGIN
+    INSERT INTO Likes VALUES(New.user, New.Photo);
+END;
 ```
