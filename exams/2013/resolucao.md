@@ -18,7 +18,7 @@
 
 ## 1
 
-in progress...
+in 3progress...
 
 ## 2
 
@@ -74,10 +74,9 @@ E->A
 **Making the relations**<br/>
 Merging FDs with the same left side attributes.
 
-R1(A, B)<br/>
-R2(A, C, D)<br/>
+R1(A, C, B, D)<br/>
 R2(B, C, E)<br/>
-R2(E, A)
+R3(E, A)
 
 {A, C, D}+ = {A, B, C, D, E}, therefore R2 is a super key.
 
