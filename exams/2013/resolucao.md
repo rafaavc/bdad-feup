@@ -99,8 +99,8 @@ WHERE vulneravel = "sim";
 
 ```sql
 SELECT hostname, descricao, nome
-FROM ((AplicacaoServidor NATURAL JOIN Bug) 
-    NATURAL JOIN Servidor) 
+FROM ((AplicacaoServidor JOIN Bug using(idAplicacao)) 
+    JOIN Servidor using(idAplicacao)) 
     JOIN Pessoa ON idPessoa = idResponsavel
 ORDER BY hostname;
 ```
@@ -110,7 +110,7 @@ ORDER BY hostname;
 ```sql
 SELECT hostname
 FROM Servidor JOIN Pessoa ON idPessoa = idResponsavel
-WHERE hostname LIKE 'alu%' AND mail = 'joao.almeida@cica.pt' AND idServidor IN (SELECT idServidor FROM Bug NATURAL JOIN AplicacaoServidor);
+WHERE hostname LIKE 'alu%' AND mail = 'joao.almeida@cica.pt' AND idServidor IN (SELECT idServidor FROM Bug JOIN AplicacaoServidor using(idAplicacao));
 ```
 
 ### d
