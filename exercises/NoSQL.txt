@@ -1,0 +1,57 @@
+// 1   
+db.tweets.find({'source': 'web'}).count()  // 23136
+
+// 2
+db.tweets.find({'entities.hashtags.text':'javascript'}).count()  // 1
+
+// 3
+gb.tweets.aggregate([
+	{'$sortByCount':'$entities.hashtags.text'}
+])
+
+db.tweets.aggregate([
+	{ '$match': '$entities.hashtags.text' },
+	{ '$group': { '_id': '$entities.hashtags.id', 'count': { '$count' : '$entities.hashtags.text' } }},
+	{ '$sort': {'count': -1}}
+])   ???
+
+// 4
+db.tweets.find({'user.followers_count': {'$gt': 100}}).count()
+
+// 5
+db.tweets.limit(100).sort({'user.friends_count': -1})
+
+// 6
+db.tweets.find().limit(100).sort({'user.friends_count': -1})
+
+// 7
+db.tweets.find({'user.time_zone': 'Lisbon'}).count()  // 90
+
+// 8
+db.tweets.distinct('user.time_zone')
+
+// 9
+
+
+// 10
+db.tweets.findOne({'entities.user_mentions': {'$ne': []}})
+
+// 11
+
+
+// 12
+
+
+// 13
+
+
+// 14
+
+
+// 15
+
+
+
+
+
+

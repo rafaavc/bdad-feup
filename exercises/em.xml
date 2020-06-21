@@ -1,0 +1,41 @@
+<question type="multichoice">
+    <name>
+        <text>UML Data Modelling</text>
+    </name>
+    <questiontext format="html">
+        <!-- imagem em anexo -->
+        <image>em.jpg</image>
+        <text>Taking into account the above image, and knowing that 'characterName' may be NULL, which of these scenarios describes it the best?</text>
+    </questiontext>
+    <answer fraction="100">
+        <text>
+            A celebrity can participate in various films with various given roles (for example: leading actor, producer, etc), while being able to have more than one role in a given film. 
+            The name of the character, if the role so requires (for example, when role is leading actor), must also be related with the celebrity, the film and the role, while enabling the celebrity to play more than one character in a given film.
+        </text>
+        <feedback><text>Correct!</text></feedback>
+    </answer>
+    <answer fraction="0">
+        <text>
+            A celebrity can participate in various films with a given role (for example: leading actor, producer, etc) and none other. 
+            The name of the character, if the role so requires (for example, when role is leading actor) must also be related with the celebrity, the film and the role. The celebrity may not play more than one character in a given film.
+        </text>
+        <feedback><text>The celebrity may have more than one role and play more than one character in a given film!</text></feedback>
+    </answer>
+    <answer fraction="0">
+        <text>
+            A celebrity must participate in a film with a given role (for example: leading actor, producer, etc), while being able to have more than one role in any given film. 
+            The name of the character, if the role so requires (for example, when role is leading actor), may also be related with the celebrity, the film and the role, while enabling the celebrity to play more than one character in a given film.
+        </text>
+        <feedback><text>The celebrity doesn't need to participate in a film!</text></feedback>
+    </answer>
+    <answer fraction="0">
+        <text>
+            A celebrity must participate in various films with various given roles (for example: leading actor, producer, etc), while being able to have more than one role in a given film. 
+            The name of the character must also be related with the celebrity, the film and the role. The celebrity may not play more than one character in a given film.
+        </text>
+        <feedback><text>The celebrity doesn't need to participate in a film, can play more than one character in the same film and doesn't need to have a character name (it would be NULL), if it doesn't apply!</text></feedback>
+    </answer>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <answernumbering>ABCD</answernumbering>
+</question>

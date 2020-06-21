@@ -1,0 +1,18 @@
+
+1) π nr Aluno
+
+2) σ curso='AC' Cadeira
+
+3) (Aluno) ⨝ Aluno.Nome = Prof.Nome (Prof)
+
+4) π Nome Aluno - π Nome Prof
+
+5) π Nome Aluno UNIAO π Nome Prof
+
+6) π Aluno.Nome (σ cod='TS1' Prova⨝Aluno)
+
+7) π Aluno.Nome ((σ curso='IS' Cadeira) ⨝ Prova ⨝ Aluno)
+
+8) for later
+
+9) (π nota Prova) - (π nota1 (σ (Prova.nota1<Prova.nota2) ((ρ nota1←nota (π nota Prova)) x (ρ nota2←nota (π nota Prova)))))
