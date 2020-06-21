@@ -3,6 +3,10 @@
 
 Check if the left side of every fd is a super key.
 
+# Question 13
+
+in progress...
+
 # Question 14
 
 ```sql
