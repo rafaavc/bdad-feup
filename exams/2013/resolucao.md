@@ -33,7 +33,8 @@ E->A
 
 **Obtaining the minimal basis**
 
-1) Singleton right side attributes<br/>
+1) Singleton right side attributes
+
 A->B<br/>
 AC->D<br/>
 BD->C<br/>
@@ -41,7 +42,8 @@ B->C<br/>
 B->E<br/>
 E->A
 
-2) Checking if there are redundant FDs<br/>
+2) Checking if there are redundant FDs
+
 Without A->B, {A}+ = {A}, so this FD is **not** redundant.<br/>
 Without AC->D, {AC}+ = {A, B, C, E}, so this FD is **not** redundant.<br/>
 Without BD->C, {BD}+ = {B, D, C, E}, so this FD *is* redundant. (removed from now on)<br/>
@@ -56,7 +58,8 @@ B->C<br/>
 B->E<br/>
 E->A
 
-3) Checking if there are redundant left side attributes<br/>
+3) Checking if there are redundant left side attributes
+
 AC->D:<br/>
 Without the C, A->D. But {A}+ = {B, C, E, A}, so the C can't be removed.
 
