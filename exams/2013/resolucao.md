@@ -81,7 +81,7 @@ R1(A, C, B, D)<br/>
 R2(B, C, E)<br/>
 R3(E, A)
 
-{A, C, D}+ = {A, B, C, D, E}, therefore R2 is a super key.
+{A, C, B, D}+ = {A, B, C, D, E}, therefore R1 is a super key.
 
 Because there is at least one relation with a super key schema, we won't need to add one.
 
