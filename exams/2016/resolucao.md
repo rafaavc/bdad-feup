@@ -5,7 +5,7 @@ Check if the left side of every fd is a super key.
 
 # Question 13
 
-in progress...
+<img src="q13.jpg" height="350"/>
 
 # Question 14
 
