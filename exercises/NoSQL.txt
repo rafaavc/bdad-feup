@@ -9,11 +9,7 @@ gb.tweets.aggregate([
 	{'$sortByCount':'$entities.hashtags.text'}
 ])
 
-db.tweets.aggregate([
-	{ '$match': '$entities.hashtags.text' },
-	{ '$group': { '_id': '$entities.hashtags.id', 'count': { '$count' : '$entities.hashtags.text' } }},
-	{ '$sort': {'count': -1}}
-])   ???
+db.tweets.aggregate( [{ $group: { _id: "$entities.hashtags.text", totalTweets: { $sum: 1 } } },{ $sort: { totalTweets: -1 } }] )
 
 // 4
 db.tweets.find({'user.followers_count': {'$gt': 100}}).count()
@@ -31,7 +27,7 @@ db.tweets.find({'user.time_zone': 'Lisbon'}).count()  // 90
 db.tweets.distinct('user.time_zone')
 
 // 9
-
+db.tweets.aggregate( [{ $group: { _id: "$user.time_zone", totalTweets: { $sum: 1 } } },{ $sort: { totalTweets: -1 } }] )
 
 // 10
 db.tweets.findOne({'entities.user_mentions': {'$ne': []}})

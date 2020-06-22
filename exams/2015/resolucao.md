@@ -93,13 +93,13 @@ WHERE id NOT IN (SELECT user FROM Photo);
 ```sql
 SELECT cast(sum(cnt) as float)/count(photo) as Media
 FROM
-    (SELECT photo, count(photo) as cnt
+    (SELECT photo, count(*) as cnt
      FROM AppearsIn
      WHERE photo in
         (SELECT photo
-        FROM Likes
-        GROUP BY photo
-        HAVING count(photo) > 3)
+         FROM Likes
+         GROUP BY photo
+         HAVING count(*) > 3)
      GROUP BY photo);
 ```
 
@@ -125,9 +125,9 @@ FROM Photo JOIN
 DELETE FROM Photo
 WHERE julianday(uploadDate) < julianday(DATE("2010-01-01")) 
     AND id in (SELECT photo
-                FROM AppearsIn
-                GROUP BY photo
-                HAVING count(user) < 2);
+               FROM AppearsIn
+               GROUP BY photo
+               HAVING count(user) < 2);
 ```
 
 # Question 19

@@ -34,8 +34,8 @@ SELECT nome as Nome, anoCurricular as 'Ano Curricular'
 FROM Estudante
 WHERE ID not in 
     (SELECT DISTINCT ID1 as ID
-    FROM (Amizade JOIN Estudante as E2 on Amizade.ID2 = E2.ID) JOIN Estudante as E1 on Amizade.ID1 = E1.ID
-    WHERE E1.anoCurricular <> E2.anoCurricular) 
+     FROM (Amizade JOIN Estudante as E2 on Amizade.ID2 = E2.ID) JOIN Estudante as E1 on Amizade.ID1 = E1.ID
+     WHERE E1.anoCurricular <> E2.anoCurricular) 
 AND ID in (SELECT ID1 as ID from Amizade);
 ```
 
@@ -54,8 +54,8 @@ FROM
     (SELECT nome, anoCurricular, max(cnt)
     FROM
         (SELECT ID1, count(ID2) as cnt
-        FROM Amizade
-        GROUP BY ID1) JOIN Estudante on ID1 = ID);
+         FROM Amizade
+         GROUP BY ID1) JOIN Estudante on ID1 = ID);
         
 ```
 

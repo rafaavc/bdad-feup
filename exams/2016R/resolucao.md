@@ -17,9 +17,9 @@ SELECT nome
 FROM Estudante
 WHERE ID in
     (SELECT ID1
-    FROM Amizade JOIN Estudante on ID2 = ID
-    GROUP BY ID1
-    HAVING count(DISTINCT anoCurricular) = 5);
+     FROM Amizade JOIN Estudante on ID2 = ID
+     GROUP BY ID1
+     HAVING count(DISTINCT anoCurricular) = 5);
 ```
 
 # Question 17
