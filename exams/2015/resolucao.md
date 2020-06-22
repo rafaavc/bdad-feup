@@ -43,14 +43,17 @@ B -> C
 R1(A, B, E)<br/>
 R2(B, C, D)
 
-{A, B, E}+ = {A, B, C, D, E}  -> super key<br/>
-{B, C, D}+ = {A, B, C, D, E}  -> super key
+{A, B, E}+ = {A, B, C, D, E}  -> not a super key<br/>
+{B, C, D}+ = {A, B, C, D, E}  -> not a super key
 
-{A, B, E} and {B, C, D} are both super keys for R, so we don't need to add a key schema.
+We need to add a key schema:<br/>
+{A, F}+ = {A, B, C, D, E, F} so it is a super key.<br/>
+R3(A, F)
 
 The final relations, in 3NF, are:<br/>
     R1(A, B, E)<br/>
-    R2(B, C, D)
+    R2(B, C, D)<br/>
+    R3(A, F)
 
 For each of the functional dependencies in each relation, the left side is either a super key for the relation or the attributes from the right side that aren't also on the left side are prime.
 
