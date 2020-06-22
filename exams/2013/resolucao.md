@@ -77,11 +77,12 @@ E->A
 **Making the relations**<br/>
 Merging FDs with the same left side attributes.
 
-R1(A, C, B, D)<br/>
-R2(B, C, E)<br/>
-R3(E, A)
+R1(A, B)<br/>
+R2(A, C, D)<br/>
+R3(B, C, E)<br/>
+R4(E, A)
 
-{A, C, B, D}+ = {A, B, C, D, E}, therefore R1 is a super key.
+{E, A}+ = {A, B, C, D, E}, therefore R4 is a super key.
 
 Because there is at least one relation with a super key schema, we won't need to add one.
 
