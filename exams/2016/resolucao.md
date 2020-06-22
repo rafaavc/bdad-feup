@@ -7,6 +7,8 @@ Check if the left side of every fd is a super key.
 
 <img src="q13.jpg" height="350"/>
 
+Obs: the association class between *Encomenda* e *Produto* should include the *preco* attribute, because the price of the product from the *Fornecedor* may change, and the record of *Encomenda* would be incorrect because it wouldn't have the right price at the time the order was made.
+
 # Question 14
 
 ```sql
