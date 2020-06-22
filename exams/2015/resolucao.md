@@ -71,10 +71,6 @@ The left side of the FD is a super key, so it is in BCNF.
 
 Both the relations are in BCNF.
 
-# Question 13
-
-in progress...
-
 # Question 14
 
 ```sql

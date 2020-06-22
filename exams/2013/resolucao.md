@@ -16,10 +16,6 @@
 
 # Practical
 
-## 1
-
-in progress...
-
 ## 2
 
 R(A, B, C, D, E)<br/>
